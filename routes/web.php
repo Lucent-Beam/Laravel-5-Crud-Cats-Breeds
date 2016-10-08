@@ -34,6 +34,12 @@ Route::get('cats/breeds/{name}', function($name) {
     ->with('cats', $breed->cats);
 });
 
+Route::get('cats/{id}', function($id) {
+ $cat = App\Cat::find($id);
+ return view('cats.show')->with('cat', $cat);
+
+})->where('id','[0-9]+');
+
 // Route::get('cats/{id}',function($id){
 //    return sprintf('Cat #%s', $id);
 // })->where('id','[0-9]+');

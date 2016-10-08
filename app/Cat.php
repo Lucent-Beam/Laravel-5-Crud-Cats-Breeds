@@ -8,7 +8,7 @@ class Cat extends Model
 {
      protected $fillable = ['name','date_of_birth','breed_id'];
 
-     public function breed() {
+     public function breeds() {
        return $this->belongsTo('App\Breed');
      }
 }
